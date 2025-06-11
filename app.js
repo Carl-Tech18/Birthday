@@ -87,10 +87,7 @@ function App() {
             Wishing you a year ahead filled with joy, success, and beautiful moments!
           </p>
         </div>
-
-        <button onClick={resetCelebration} className="mt-12 bg-white bg-opacity-20 hover:bg-white hover:bg-opacity-30 backdrop-blur-sm text-white font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 border border-white border-opacity-30 shadow-lg">
-          Celebrate Someone Else
-        </button>
+              
       </div>
     </div>
   ) : (
