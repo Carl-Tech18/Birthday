@@ -1,7 +1,7 @@
 const { useState, useEffect } = React;
 
 function App() {
-  const [name, setName] = useState('Rouie'); // Pre-filled for Rouie
+  const name = 'Rouie';
   const [showCelebration, setShowCelebration] = useState(true);
   const [fireworks, setFireworks] = useState([]);
 
