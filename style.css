@@ -1,0 +1,147 @@
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes firework {
+  0% { transform: scale(0) rotate(0deg); opacity: 1; }
+  25% { transform: scale(0.3) rotate(90deg); opacity: 1; }
+  50% { transform: scale(0.7) rotate(180deg); opacity: 0.8; }
+  100% { transform: scale(1.2) rotate(360deg); opacity: 0; }
+}
+
+.animate-bounce-slow { animation: bounce-slow 2s ease-in-out infinite; }
+.animate-float { animation: float 4s ease-in-out infinite; }
+.animate-spin-slow { animation: spin-slow 3s linear infinite; }
+.animate-fade-in-up { animation: fade-in-up 1s ease-out forwards; opacity: 0; }
+
+.firework { pointer-events: none; }
+.firework-explosion {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--firework-color);
+  position: relative;
+  animation: firework 2s ease-out infinite;
+  box-shadow:
+    0 0 0 2px var(--firework-color),
+    20px 0 0 0 var(--firework-color),
+    -20px 0 0 0 var(--firework-color),
+    0 20px 0 0 var(--firework-color),
+    0 -20px 0 0 var(--firework-color),
+    15px 15px 0 0 var(--firework-color),
+    -15px -15px 0 0 var(--firework-color),
+    15px -15px 0 0 var(--firework-color),
+    -15px 15px 0 0 var(--firework-color);
+}
+.firework-explosion::before,
+.firework-explosion::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--firework-color);
+}
+.firework-explosion::before {
+  top: -15px;
+  left: -15px;
+  animation: firework 2s ease-out infinite;
+  animation-delay: 0.1s;
+}
+.firework-explosion::after {
+  top: 15px;
+  left: 15px;
+  animation: firework 2s ease-out infinite;
+  animation-delay: 0.2s;
+}
+
+/* Custom Icons */
+.gift-icon {
+  width: 40px;
+  height: 40px;
+  background: white;
+  position: relative;
+  border-radius: 4px;
+}
+.gift-icon::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 48px;
+  background: white;
+}
+.gift-icon::after {
+  content: '';
+  position: absolute;
+  left: -4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 8px;
+  background: white;
+}
+.sparkle-icon {
+  width: 16px;
+  height: 16px;
+  background: #fde047;
+  transform: rotate(45deg);
+  position: relative;
+}
+.sparkle-icon::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 24px;
+  background: #fde047;
+}
+.sparkle-icon::after {
+  content: '';
+  position: absolute;
+  left: -4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 2px;
+  background: #fde047;
+}
+.heart-icon {
+  width: 32px;
+  height: 32px;
+  background: #f87171;
+  position: relative;
+  transform: rotate(-45deg);
+  border-radius: 0 0 0 50%;
+}
+.heart-icon::before,
+.heart-icon::after {
+  content: '';
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  background: #f87171;
+  border-radius: 50%;
+}
+.heart-icon::before { top: -16px; left: 0; }
+.heart-icon::after { left: 16px; top: 0; }
