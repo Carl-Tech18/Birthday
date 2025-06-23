@@ -69,8 +69,14 @@ function App() {
           ))}
         </h1>
 
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-none">
+          {"18th".split("").map((char, i) => (
+            <span key={i} className="inline-block animate-bounce-slow text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-red-400 to-pink-400" style={{ animationDelay: `${(i + 5) * 0.1}s` }}>{char}</span>
+          ))}
+        </h2>
+
         <h2 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-none">
-          {"BIRTHDAY".split("").map((char, i) => (
+          {"BIRTHDAY!🎉".split("").map((char, i) => (
             <span key={i} className="inline-block animate-bounce-slow text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-red-400 to-pink-400" style={{ animationDelay: `${(i + 5) * 0.1}s` }}>{char}</span>
           ))}
         </h2>
@@ -81,10 +87,10 @@ function App() {
 
         <div className="space-y-6 text-white text-opacity-90 text-2xl md:text-3xl lg:text-4xl max-w-2xl mx-auto">
   <p className="animate-fade-in-up" style={{ animationDelay: '1.5s' }}>
-    May your special day be filled with happiness, laughter, and all your favorite things!
+    Welcome to legal adulthood! Wishing you all the love, joy, and opportunities this new chapter brings. Keep shining and enjoy every moment of your special day. 🥂💖
   </p>
   <p className="animate-fade-in-up" style={{ animationDelay: '2s' }}>
-    Wishing you a year ahead filled with joy, success, and beautiful moments!
+    May your special day be filled with happiness, laughter, and all your favorite things! Wishing you a year ahead filled with joy, success, and beautiful moments! 💫✨
   </p>
 </div>
             
