@@ -71,7 +71,7 @@ function App() {
         border: "2px solid rgba(255,255,255,0.10)"
       }}>
         <div className="birthday-title">
-          Happy 18th Birthday, Rouie! <span role="img" aria-label="party">🎉👑</span>
+          Happy 18th Birthday, Rouie!<span role="img" aria-label="party">🎉👑</span>
         </div>
         <div className="birthday-subtitle" style={{ marginTop: 18 }}>
           Welcome to legal adulthood! Wishing you all the love, joy, and opportunities this new chapter brings.<br />
