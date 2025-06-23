@@ -1,23 +1,22 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6d28d9, #1e3a8a 70%, #c026d3 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Firework & Sparkle Animations */
 @keyframes bounce-slow {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-20px); }
 }
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(180deg); }
-}
-
-@keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 @keyframes fade-in-up {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes firework {
   0% { transform: scale(0) rotate(0deg); opacity: 1; }
   25% { transform: scale(0.3) rotate(90deg); opacity: 1; }
@@ -25,86 +24,107 @@
   100% { transform: scale(1.2) rotate(360deg); opacity: 0; }
 }
 
-.animate-bounce-slow { animation: bounce-slow 2s ease-in-out infinite; }
-.animate-float { animation: float 4s ease-in-out infinite; }
-.animate-spin-slow { animation: spin-slow 3s linear infinite; }
-.animate-fade-in-up { animation: fade-in-up 1s ease-out forwards; opacity: 0; }
+/* Birthday Title */
+.birthday-title {
+  font-family: 'Lobster', cursive;
+  font-size: 56pt;
+  color: #ffd700; /* Gold */
+  text-align: center;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 10px #b794f4, 0 1px 0 #fff;
+  margin: 0 0 20px 0;
+  line-height: 1.1;
+  background: linear-gradient(90deg, #ffd700 60%, #ff69b4 90%, #4169e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: bounce-slow 2s infinite;
+}
 
-.firework { pointer-events: none; }
+/* Subtitle */
+.birthday-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24pt;
+  color: #fff;
+  text-align: center;
+  margin: 0 0 24px 0;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  font-weight: 400;
+  background: rgba(0,0,0,0.1);
+  padding: 0 20px;
+}
+
+/* Dreamy message */
+.birthday-message {
+  font-family: 'Poppins', sans-serif;
+  font-size: 22pt;
+  color: #e2b9ff;
+  text-align: center;
+  margin: 0 0 10px 0;
+  line-height: 1.4;
+  letter-spacing: 2%;
+  font-weight: 300;
+  background: rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 14px 24px;
+  box-shadow: 0 2px 16px 0 rgba(186, 104, 200, 0.18);
+}
+
+/* Fireworks */
+.firework {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
 .firework-explosion {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: var(--firework-color);
   position: relative;
-  animation: firework 2s ease-out infinite;
+  animation: firework 1.5s ease-out infinite;
   box-shadow:
     0 0 0 2px var(--firework-color),
     20px 0 0 0 var(--firework-color),
     -20px 0 0 0 var(--firework-color),
     0 20px 0 0 var(--firework-color),
     0 -20px 0 0 var(--firework-color),
-    15px 15px 0 0 var(--firework-color),
-    -15px -15px 0 0 var(--firework-color),
-    15px -15px 0 0 var(--firework-color),
-    -15px 15px 0 0 var(--firework-color);
+    14px 14px 0 0 var(--firework-color),
+    -14px -14px 0 0 var(--firework-color),
+    14px -14px 0 0 var(--firework-color),
+    -14px 14px 0 0 var(--firework-color);
 }
 .firework-explosion::before,
 .firework-explosion::after {
   content: '';
   position: absolute;
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: var(--firework-color);
 }
 .firework-explosion::before {
-  top: -15px;
-  left: -15px;
-  animation: firework 2s ease-out infinite;
-  animation-delay: 0.1s;
+  top: -12px;
+  left: -12px;
+  animation: firework 1.5s ease-out infinite;
+  animation-delay: 0.09s;
 }
 .firework-explosion::after {
-  top: 15px;
-  left: 15px;
-  animation: firework 2s ease-out infinite;
-  animation-delay: 0.2s;
+  top: 12px;
+  left: 12px;
+  animation: firework 1.5s ease-out infinite;
+  animation-delay: 0.17s;
 }
 
-/* Custom Icons */
-.gift-icon {
-  width: 40px;
-  height: 40px;
-  background: white;
-  position: relative;
-  border-radius: 4px;
-}
-.gift-icon::before {
-  content: '';
-  position: absolute;
-  top: -4px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 8px;
-  height: 48px;
-  background: white;
-}
-.gift-icon::after {
-  content: '';
-  position: absolute;
-  left: -4px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 48px;
-  height: 8px;
-  background: white;
-}
+/* Sparkle Particle */
 .sparkle-icon {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   background: #fde047;
   transform: rotate(45deg);
+  border-radius: 4px;
   position: relative;
+  opacity: 0.7;
 }
 .sparkle-icon::before {
   content: '';
@@ -113,7 +133,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: 2px;
-  height: 24px;
+  height: 20px;
   background: #fde047;
 }
 .sparkle-icon::after {
@@ -122,26 +142,8 @@
   left: -4px;
   top: 50%;
   transform: translateY(-50%);
-  width: 24px;
+  width: 20px;
   height: 2px;
   background: #fde047;
 }
-.heart-icon {
-  width: 32px;
-  height: 32px;
-  background: #f87171;
-  position: relative;
-  transform: rotate(-45deg);
-  border-radius: 0 0 0 50%;
-}
-.heart-icon::before,
-.heart-icon::after {
-  content: '';
-  width: 32px;
-  height: 32px;
-  position: absolute;
-  background: #f87171;
-  border-radius: 50%;
-}
-.heart-icon::before { top: -16px; left: 0; }
-.heart-icon::after { left: 16px; top: 0; }
+.animate-fade-in-up { animation: fade-in-up 1s ease-out forwards; opacity: 0; }
