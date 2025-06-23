@@ -79,14 +79,14 @@ function App() {
           Dear {name}!
         </h3>
 
-        <div className="space-y-6 text-white text-opacity-90 text-lg md:text-xl max-w-2xl mx-auto">
-          <p className="animate-fade-in-up" style={{ animationDelay: '1.5s' }}>
-            May your special day be filled with happiness, laughter, and all your favorite things!
-          </p>
-          <p className="animate-fade-in-up" style={{ animationDelay: '2s' }}>
-            Wishing you a year ahead filled with joy, success, and beautiful moments!
-          </p>
-        </div>
+        <div className="space-y-6 text-white text-opacity-90 text-2xl md:text-3xl lg:text-4xl max-w-2xl mx-auto">
+  <p className="animate-fade-in-up" style={{ animationDelay: '1.5s' }}>
+    May your special day be filled with happiness, laughter, and all your favorite things!
+  </p>
+  <p className="animate-fade-in-up" style={{ animationDelay: '2s' }}>
+    Wishing you a year ahead filled with joy, success, and beautiful moments!
+  </p>
+</div>
             
       </div>
     </div>
